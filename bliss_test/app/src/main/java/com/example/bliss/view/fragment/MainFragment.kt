@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProviders
 import com.example.bliss.R
+import com.example.bliss.core.getStringMessage
 import com.example.bliss.core.openFragment
 import com.example.bliss.viewmodel.EmojiViewModel
 import com.example.bliss.viewmodel.UserViewModel
@@ -39,7 +40,7 @@ class MainFragment : Fragment(), View.OnClickListener {
                 enableButtons()
             } else {
                 disableButtons()
-                Toast.makeText(requireContext(), "Nothing found", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), getStringMessage(requireActivity(), R.string.error_nothing_found), Toast.LENGTH_LONG).show()
             }
         })
 
@@ -72,7 +73,7 @@ class MainFragment : Fragment(), View.OnClickListener {
                 if (edt_username.text.toString().isNotEmpty()) {
                     userViewModel.retrieveUser(edt_username.text.toString())
                 } else {
-                    Toast.makeText(requireContext(), "Inform username", Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(), getStringMessage(requireActivity(), R.string.error_username_field), Toast.LENGTH_LONG).show()
                 }
             }
             btn_avatar_list -> {

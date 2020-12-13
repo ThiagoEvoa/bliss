@@ -3,7 +3,9 @@ package com.example.bliss.model.service
 import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProviders
+import com.example.bliss.R
 import com.example.bliss.core.RetrofitConfig
+import com.example.bliss.core.getStringMessage
 import com.example.bliss.model.User
 import com.example.bliss.viewmodel.UserViewModel
 import retrofit2.Call
@@ -23,6 +25,6 @@ class UserService(private val context: FragmentActivity) : Callback<User> {
     }
 
     override fun onFailure(call: Call<User>, t: Throwable) {
-        Toast.makeText(context, "Error while retrieve user", Toast.LENGTH_LONG).show()
+        Toast.makeText(context, getStringMessage(context, R.string.error_retrieve_user), Toast.LENGTH_LONG).show()
     }
 }

@@ -5,6 +5,9 @@
     <string name="avatar_list_button">Avatar List</string>
     <string name="google_repos_button">Google Repos</string>
     <string name="hint_edit_text">Insert github username</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="error_retrieve_user">Error while retrieve user</string>
+    <string name="error_retrieve_repos">Error while retrieve repos</string>
+    <string name="error_retrieve_emojis">Error while retrieve emojis</string>
+    <string name="error_nothing_found">Nothing found</string>
+    <string name="error_username_field">Inform username</string>
 </resources>

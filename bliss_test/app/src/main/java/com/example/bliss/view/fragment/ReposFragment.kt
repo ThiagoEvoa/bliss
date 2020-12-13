@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bliss.R
+import com.example.bliss.core.getStringMessage
 import com.example.bliss.model.Repo
 import com.example.bliss.view.adapter.ReposAdapter
 import com.example.bliss.viewmodel.UserViewModel
@@ -37,7 +38,7 @@ class ReposFragment : Fragment() {
             if (it.size > 0) {
                 setAdapter(it, view)
             } else {
-                Toast.makeText(requireContext(), "Nothing found", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), getStringMessage(requireActivity(), R.string.error_nothing_found), Toast.LENGTH_LONG).show()
             }
         })
 

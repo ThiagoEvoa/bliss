@@ -3,7 +3,9 @@ package com.example.bliss.model.service
 import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProviders
+import com.example.bliss.R
 import com.example.bliss.core.RetrofitConfig
+import com.example.bliss.core.getStringMessage
 import com.example.bliss.viewmodel.EmojiViewModel
 import retrofit2.Call
 import retrofit2.Callback
@@ -25,6 +27,6 @@ class EmojiService(private val context: FragmentActivity) : Callback<Map<String,
     }
 
     override fun onFailure(call: Call<Map<String, String>>, t: Throwable) {
-        Toast.makeText(context, "Error while retrieve emojis", Toast.LENGTH_LONG).show()
+        Toast.makeText(context, getStringMessage(context, R.string.error_retrieve_emojis), Toast.LENGTH_LONG).show()
     }
 }
